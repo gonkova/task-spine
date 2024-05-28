@@ -27,7 +27,7 @@ const Footer = () => {
                         <img src="images/Logo.svg" alt="" className="bg-bgcustom rounded-md w-46 h-auto" />
                         </div>
                         <p className='text-white text-lm w-64 pb-6'>
-                        Spine is the ultimate boost for your online presence. We're here to supercharge your digital agency's journey.
+                        Spine is the ultimate boost for your online presence. We&apos;re here to supercharge your digital agency&apos;s journey.
                         </p>
                         <div className='flex ml-16 md:ml-0 gap-6 pb-5'>
                             <img src='images/facebook-logo.svg' alt='' className='w-8 h-auto cursor-pointer transform hover:scale-150' />
