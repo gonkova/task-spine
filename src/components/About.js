@@ -20,7 +20,7 @@ const About = () => {
                         <br />
                         Excellence
                     </h2>
-                    <p className="w-4/3 mt-6 text-gray text-left font-bold text-l leading-140 font-poppins ">
+                    <p className="w-4/3 mt-6 text-gray text-left  font-medium text-l leading-140 font-poppins ">
                         At Spine, we&apos;re on a mission to empower
                         businesses with the digital tools and expertise they need
                         to thrive in the ever-evolving online landscape.
@@ -30,9 +30,9 @@ const About = () => {
                             <li key={index} className=' w-4/3 flex items-left pt-2'>
                                 <img src='images/polygon-3.svg' alt='' />
                                 <p>
-                                    <span className=" text-dark-1 text-left font-bold text-l leading-140 font-poppins ">{item.title}</span>
+                                    <span className=" text-dark-1 text-left font-medium text-l leading-140 font-poppins ">{item.title}</span>
                                     &nbsp;
-                                    <span className=" text-gray text-left font-bold text-l leading-140 font-poppins ">{item.description}</span>
+                                    <span className=" text-gray text-left font-medium text-l leading-140 font-poppins ">{item.description}</span>
                                 </p>
                             </li>
                         ))}

@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="container py-2 mx-auto ">
                 <div className='flex flex-col justify-between items-center mt-20 md:mt-24 relative'>
                     <div>
-                        <h1 className="text-5xl md:text-[88px] text-center font-sf-pro mb-28 md:mb-[20%] font-bold leading-110">
+                        <h1 className="text-5xl md:text-[88px] text-center font-sf-pro font-bold leading-110 mb-28 md:mb-[20%] ">
                             We love to find
                             <br className="hidden md:block" />
                             solutions
@@ -18,7 +18,7 @@ const Hero = () => {
                 </div>
                 <div>
                     <div className='flex flex-col items-center gap-10 -mt-24'>
-                        <p className='text-center text-l leading-140 font-poppins  '>
+                        <p className='text-center  text-l leading-140 font-poppins  '>
                             Elevate your online presence with Spine
                             cutting-edge solutions. Discover limitless <br/> possibilities for your
                             digital agency&apos;s success.
