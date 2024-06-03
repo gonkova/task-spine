@@ -4,7 +4,7 @@ import AccordionUI from '@/components/AccordionUI';
 import Image from 'next/image';
 
 const FAQ = () => {
-    const [Index, setIndex] = useState(null);
+    const [index, setIndex] = useState(null);
 
     const data = [
         {
@@ -48,7 +48,7 @@ const FAQ = () => {
                     <div className='flex md:-mt-12'>
                         <Image
                             src='images/billiard.svg'
-                            alr=''
+                            alt=''
                             width={20}
                             height={20} />
                         <span className='ml-2 text-l  font-bold font-sf-pro text-dark-1'>
@@ -59,17 +59,17 @@ const FAQ = () => {
                 <img src='images/vector.svg' alt='' className=' w-28 md:w-48 h-auto ml-[153px] md:-ml-[298px] absolute z-20 top-8 md:top-2/3 pb-2.5 md:transform -translate-y-1/2 -translate-x-1/2' />
             </div>
             <div className=" md:px-8 flex flex-col  justify-center items-center mt-6 md:mt-12 md:mx-20 rounded-xl h-auto ">
-                {data.map((data) => {
-                    return (
-                        <AccordionUI
-                            Id={data.id}
-                            title={data.question}
-                            children={data.answer}
-                            Index={Index}
-                            setIndex={setIndex}
-                        ></AccordionUI>
-                    );
-                })}
+                {data.map((item) => (
+                    <AccordionUI
+                        key={item.id}
+                        Id={item.id}
+                        title={item.question}
+                        Index={index}
+                        setIndex={setIndex}
+                    >
+                        {item.answer}
+                    </AccordionUI>
+                ))}
             </div>
         </div>
     );
