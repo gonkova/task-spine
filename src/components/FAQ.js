@@ -62,12 +62,12 @@ const FAQ = () => {
                 {data.map((data) => {
                     return (
                         <AccordionUI
-                            title={data.question}
                             Id={data.id}
+                            title={data.question}
                             children={data.answer}
                             Index={Index}
                             setIndex={setIndex}
-                        />
+                        ></AccordionUI>
                     );
                 })}
             </div>
