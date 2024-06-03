@@ -19,7 +19,6 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-to-bottom": "linear-gradient(180deg, rgb(221,255,182) 0%, rgba(255,255,255,1) 50%)",
- 
       },
       colors: {
         custombg: '#ddffb6',
@@ -31,12 +30,13 @@ const config: Config = {
           1: '#0C0C0C',
           2: '#353535',
           3: '#464646',
-          4: '#7B7B7B',
+          4: '#7b7b7b',
         },
         light: {
           1: '#DCDCDC',
           2: '#EBEBEB',
-          3: '#F4F4F4'
+          3: '#F4F4F4',
+          4: '#e0e0e0',
         },
         white: '#FFFFFF',
       },

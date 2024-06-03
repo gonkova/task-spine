@@ -1,16 +1,13 @@
 'use client';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { images } from './constants';
+import Description from './Description';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const images = [
-  { src: '/images/hero1.png', title: 'Title 1', desc: 'Description 1' },
-  { src: '/images/hero2.png', title: 'Title 2', desc: 'Description 2' },
-  { src: '/images/img1-slider.png', title: 'Title 3', desc: 'Description 3' },
-];
-
-const Carousel = () => {
+const Slider = () => {
   const [activeImage, setActiveImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const clickNext = () => {
     setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -20,70 +17,109 @@ const Carousel = () => {
     setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
+  const setActive = (index) => {
+    setActiveImage(index);
+  };
+
+  const togglePause = () => {
+    setIsPaused((prev) => !prev);
+  };
+
   useEffect(() => {
+    if (isPaused) return;
     const timer = setTimeout(clickNext, 6000);
     return () => clearTimeout(timer);
-  }, [activeImage]);
+  }, [activeImage, isPaused]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-auto mx-auto">
-      <div className="relative w-full max-w-5xl overflow-hidden rounded-2xl shadow-2xl">
+    <>
+      <main className="flex justify-center items-center bg-slate-500 mx-auto md:h-[400px] mt-16 md:mt-0 shadow-2xl rounded-2xl overflow-hidden max-w-full">
         <AnimatePresence initial={false}>
           {images.map((pic, idx) => (
             idx === activeImage && (
               <motion.div
                 key={idx}
-                className="flex flex-col-reverse md:flex-row w-full h-[70vh] md:h-auto items-center"
-                initial={{ x: 300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -300, opacity: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="flex flex-col w-full md:flex-row mx-auto overflow-hidden"
+                initial={{ x: 300, opacity: 0, scale: 0.5 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                exit={{ x: -300, opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
               >
-                <div className="flex flex-col justify-center items-start p-10 bg-gray-50 w-full md:w-1/2 h-full">
-                  <h2 className="text-2xl font-semibold mb-4">{pic.title}</h2>
-                  <p className="text-base text-gray-600 mb-4">{pic.desc}</p>
-                  <button className="px-6 py-2 bg-blue-600 text-white rounded-lg">Try for Free</button>
+                <div className="md:w-1/2 w-full">
+                  <div className="relative w-full h-[200px] md:h-[400px]">
+                    <Image
+                      src={pic.src}
+                      alt=""
+                      layout="fill"
+                      objectFit="contain"
+                      className="bg-white rounded-2xl"
+                    />
+                  </div>
                 </div>
-                <div className="relative w-full md:w-1/2 h-full">
-                  <Image
-                    src={pic.src}
-                    alt=""
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-2xl"
+                <div className="w-full">
+                  <Description
+                    activeImage={activeImage}
+                    clickNext={clickNext}
+                    clickPrev={clickPrev}
                   />
                 </div>
               </motion.div>
             )
           ))}
         </AnimatePresence>
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-4">
+      </main>
+      <div className="flex justify-between mt-4 mx-10">
+        <div className="flex space-x-2">
+          <Image
+            src='images/rectangle.svg'
+            alt=''
+            width={20}
+            height={20}
+          />
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-3 h-3 rounded-full ${idx === activeImage ? 'bg-dark-1' : 'bg-default'}`}
+              onClick={() => setActive(idx)}
+            />
+          ))}
+        </div>
+        <hr className="border-dark-1 w-full mx-4" />
+        <div className="flex space-x-4">
           <button
-            className="p-2 bg-gray-100 rounded-full border-2 border-gray-400 hover:bg-black hover:border-transparent transition-all"
+            className="p-2 cursor-pointer rounded-full border-2 border-gray-400 bg-gray-100 hover:bg-black hover:border-transparent transition-all"
             onClick={clickPrev}
           >
             <Image
-              src='/images/left.svg'
-              alt='Previous'
+              src='images/left.svg'
+              alt=''
               width={20}
               height={20}
             />
           </button>
           <button
-            className="p-2 bg-gray-100 rounded-full border-2 border-gray-400 hover:bg-black hover:border-transparent transition-all"
+            className="p-2 cursor-pointer rounded-full border-2 border-gray-400 bg-gray-100 hover:bg-black hover:border-transparent transition-all"
             onClick={clickNext}
           >
             <Image
-              src='/images/right.svg'
-              alt='Next'
+              src='images/left.svg'
+              alt=''
               width={20}
               height={20}
+              className='rotate-180'
             />
+          </button>
+          <button
+            className="p-2 cursor-pointer rounded-full border-2 border-gray-400 bg-gray-100 hover:bg-black hover:border-transparent transition-all"
+            onClick={togglePause}
+          >
+            {isPaused ? 'Play' : 'Pause'}
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Carousel;
+export default Slider;
+

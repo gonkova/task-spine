@@ -35,27 +35,30 @@ const FAQ = () => {
     ];
 
     return (
-        <div>
-            <div className='flex flex-col justify-between items-center  mt-20 md:mt-24 relative'>
+        <div className='container w-[90%] md:w-9/12  mx-auto pb-24'>
+            <div className='flex flex-col justify-between md:items-center  mt-16 md:mt-24 relative'>
                 <div>
-                    <h1 className="text-xl md:text-[64px] text-left font-sf-pro mb-[9%] font-bold leading-110">
-                        Got Questions? We&apos;ve Got
-                        <br className="hidden md:block" />
+                    <h1 className="text-4xl md:text-[64px] text-left font-sf-pro mb-[9%] font-bold leading-110">
+                        Got Questions?
+                        <br className="block md:hidden" />
+                        We&apos;ve Got
+                        <br />
                         Answers!
                     </h1>
+                    <div className='flex md:-mt-12'>
+                        <Image
+                            src='images/billiard.svg'
+                            alr=''
+                            width={20}
+                            height={20} />
+                        <span className='ml-2 text-l  font-bold font-sf-pro text-dark-1'>
+                            Check out the services
+                        </span>
+                    </div>
                 </div>
-                <img src='images/vector.svg' alt='' className='w-48 h-auto -ml-[298px] absolute z-20 top-1/2 transform -translate-y-1/2 -translate-x-1/2' />
-                <div className='flex flex-1 w-1/2 mx-auto'>
-                    <Image
-                        src='images/billiard.svg'
-                        alr=''
-                        width={20}
-                        height={20} />
-                    <p className='ml-2 font-bold text-dark-1'>Check out the services</p>
-                </div>
+                <img src='images/vector.svg' alt='' className=' w-28 md:w-48 h-auto ml-[153px] md:-ml-[298px] absolute z-20 top-8 md:top-2/3 pb-2.5 md:transform -translate-y-1/2 -translate-x-1/2' />
             </div>
-
-            <div className=" flex flex-col  justify-center items-center md:mt-32 md:mx-20 p-5 rounded-xl h-auto py-20 bg-green-50">
+            <div className=" md:px-8 flex flex-col  justify-center items-center mt-6 md:mt-12 md:mx-20 rounded-xl h-auto ">
                 {data.map((data) => {
                     return (
                         <AccordionUI

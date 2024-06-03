@@ -22,33 +22,33 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='bg-custombg '>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-                <div className='flex items-center justify-between h-16 pt-11'>
-                    <div className='flex items-center'>
-                        <div className='flex-shrink-0 '>
+        <nav className='bg-custombg'>
+            <div className='max-w-7xl mx-auto '>
+                <div className='flex items-center justify-between h-18 p-7 md:p-10'>
+                    <div className='flex items-center w-1/4'>
+                    <div className='flex-shrink-0 ml-1 md:ml-0'>
                             <Link href='/'>
                                 <div>
                                     <img src="images/spine.svg" alt="" className="bg-bgcustom rounded-md w-full h-full" />
                                 </div>
                             </Link>
                         </div>
-                        <div className='hidden md:flex items-center  ml-36 mr-6'>
-                            {MENU_ITEMS.map((item, index) => (
-                                <Link key={index} href={item.link}>
-                                    <div className='font-semibold text-dark-3 hover:text-dark-1 p-2 ml-10 cursor-pointer hover:underline underline-offset-8 decoration-4 decoration-primary'>
-                                        {item.title}
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
                     </div>
-                    <div className='hidden md:flex items-center '>
+                    <div className='hidden md:flex justify-center w-1/2'>
+                        {MENU_ITEMS.map((item, index) => (
+                            <Link key={index} href={item.link}>
+                                <div className='flex justify-between mx-4 font-semibold font-poppins leading-110 text-dark-3 hover:text-dark-1 p-2  cursor-pointer hover:underline underline-offset-8 decoration-4 decoration-primary'>
+                                    {item.title}
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                    <div className='hidden md:flex w-1/4 justify-end'>
                         <Button className='bg-transparent hover:bg-transparent text-lg rounded-lg leading-120 font-poppins'>
                             Sign Up
                         </Button>
                     </div>
-                    <div className='md:hidden   flex items-center'>
+                    <div className='md:hidden flex items-center'>
                         <button className='inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' onClick={toggleNavbar}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" className="w-10 h-10">
                                 {isClick ? (
@@ -62,19 +62,16 @@ const Navbar = () => {
                 </div>
             </div>
             {isClick && (
-                <div className='md:hidden pl-10  inset-0 flex flex-col items-center justify-center w-full h-[80vh] '>
-                    <div className='px-2 pt-2 pb-3 space-y-6 sm:px-3 flex flex-col'>
+                <div className='md:hidden pl-10 inset-0 flex h-screen w-screen flex-col'>
+                    <div className='px-2 pt-12 pb-3 space-y-6 sm:px-3 flex flex-col '>
                         {MENU_ITEMS.map((item, index) => (
                             <Link key={index} href={item.link} onClick={closeNavbar}>
-                                <div className='text-3xl font-semibold text-custom1 hover:text-blue'>{item.title}</div>
+                                <div className='text-dark-1 text-xl font-semibold font-poppins leading-110 hover:text-blue'>{item.title}</div>
                             </Link>
                         ))}
-                        <div className='space-y-12 pt-10'>
-                            <button onClick={closeNavbar} className="w-60 text-2xl bg-white text-custom1 border border-silver text-center font-bold py-2 px-8 rounded">
-                                Log in
-                            </button>
-                            <Button onClick={closeNavbar} className='w-60 text-2xl hover:bg-custom3 hover:text-blue'>
-                                Sign up
+                        <div className=' pt-6'>
+                            <Button className='bg-transparent hover:bg-transparent text-lg rounded-lg leading-120 font-poppins'>
+                                Sign Up
                             </Button>
                         </div>
                     </div>
@@ -82,6 +79,6 @@ const Navbar = () => {
             )}
         </nav>
     );
-};
-
-export default Navbar;
+}
+    export default Navbar;
+    
