@@ -1,7 +1,6 @@
 import React from "react";
 import { FaCaretRight } from 'react-icons/fa';
 
-
 const AccordionUI = ({ title, children, Id, Index, setIndex }) => {
   const handleSetIndex = (Id) => {
     if (Index === Id) {
@@ -15,11 +14,11 @@ const AccordionUI = ({ title, children, Id, Index, setIndex }) => {
     <>
       <div
         onClick={() => handleSetIndex(Id)}
-        className={` flex group cursor-pointer w-full md:w-9/12 mx-auto h-14 md:h-16 justify-between items-center p-2 mt-4 rounded-2xl ${
+        className={` flex group cursor-pointer w-full  mx-auto h-14 md:h-16 justify-between items-center p-2 mt-5 rounded-xl ${
           Index === Id ? 'bg-primary shadow-lg' : 'bg-secondary hover:bg-primary hover:shadow-lg'
         } focus:bg-primary`}
       >
-        <div className="flex group cursor-pointer  md:text-2xl font-sf-pro ">
+        <div className="flex group cursor-pointer text-base md:text-xl font-sf-pro leading-110">
           <div
             className={`${
               Index === Id ? 'text-dark-1' : 'text-dark-1'
@@ -38,7 +37,7 @@ const AccordionUI = ({ title, children, Id, Index, setIndex }) => {
       </div>
 
       {Index === Id && (
-        <div key={Id} className="bg-secondary pl-10 text-sm md:text-xl font-semibold text-gray w-full md:w-full h-auto rounded-2xl p-6 mt-4 ">
+        <div key={Id} className="bg-secondary text-xs md:text-xl leading-140 font-semibold text-gray w-full md:w-full h-auto rounded-xl p-6 mt-5 mx-auto ">
           {children}
         </div>
       )}

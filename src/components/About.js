@@ -12,42 +12,43 @@ const About = () => {
 
 
     return (
-        <div className="container mx-auto py-8 px-8 ">
-            <div className=" flex flex-col md:flex-row w-full space-x-4 ">
-                <div className="mt-14  p-4 w-80 mx-auto md:w-1/2 lg:w-1/2">
-                    <h2 className="text-3xl md:text-7xl font-bold leading-110 text-left mt-6">
-                        Unlocking Digital
-                        <br />
-                        Excellence
-                    </h2>
-                    <p className="w-4/3 mt-6 text-gray text-left  font-medium text-l leading-140 font-poppins ">
-                        At Spine, we&apos;re on a mission to empower
-                        businesses with the digital tools and expertise they need
-                        to thrive in the ever-evolving online landscape.
-                    </p>
-                    <ul className="mt-2">
-                        {SALES_ITEMS.map((item, index) => (
-                            <li key={index} className=' w-4/3 flex items-left pt-2'>
-                                <img src='images/polygon-3.svg' alt='' />
-                                <p>
-                                    <span className=" text-dark-1 text-left font-medium text-l leading-140 font-poppins ">{item.title}</span>
-                                    &nbsp;
-                                    <span className=" text-gray text-left font-medium text-l leading-140 font-poppins ">{item.description}</span>
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
-                    <Button className='bg-primary border-none rounded-lg text-base leading-120 font-poppins mt-10' >
+        <div className="h-auto flex flex-col items-center justify-center pt-12 md:pt-16 ">
+            <div className="py-2 mx-auto md:px-10 w-full max-w-7xl">
+                <div className=" flex flex-col md:flex-row w-full md:justify-between  md:space-y-0 md:space-x-10 mx-auto">
+                    <div className=" w-90 mx-6 md:w-1/2">
+                        <h2 className="text-4xl md:text-7xl font-bold font-sf-pro leading-110 text-left ">
+                            Unlocking Digital
+                            <br />
+                            Excellence
+                        </h2>
+                        <p className="mt-6 md:mt-6 text-gray text-left font-semibold text-base md:text-base leading-140  md:leading-140 font-sf-pro ">
+                            At Spine, we&apos;re on a mission to empower
+                            businesses with the digital tools and <br className='hidden md:block' />expertise they need
+                            to thrive in the ever-evolving online landscape.
+                        </p>
+                        <ul className="mt-6 md:mt-6">
+                            {SALES_ITEMS.map((item, index) => (
+                                <li key={index} className=' flex items-left pt-2 md:pt-4'>
+                                    <img src='images/polygon-3.svg' alt='' className='mr-2' />
+                                    <p>
+                                        <span className=" text-dark-1 text-left font-bold text-sm md:text-base  leading-140 font-poppins">{item.title}</span>
+                                        &nbsp;
+                                        <span className=" text-gray text-left font-bold text-sm md:text-base md:leading-110 leading-140 font-sf-pro ">{item.description}</span>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                        <Button className='bg-primary border-none rounded-lg text-base leading-120 font-poppins mt-10 py-3 hover:bg-transparent hover:border-dark-1 hover:border-2 hover:border-solid ' >
                             About Us
                         </Button>
-
-                </div>
-                <div className="md:p-4 lg:mt-0 w-80 mx-auto md:w-1/2 lg:w-1/2 ">
-                    <img
-                        src="images/img-about.png"
-                        alt="Изображение"
-                        className="w-[467px] h-[467px] rounded-lg transition-transform ease-in-out mt-20"
-                    />
+                    </div>
+                    <div className=" mt-8 md:mt-2 mb-12 w-90 mx-auto md:w-1/2 md:pb-48">
+                        <img
+                            src="images/img-about.png"
+                            alt="Изображение"
+                            className=" w-[342px] h-[342px] md:w-[467px] md:h-[467px] rounded-lg transition-transform ease-in-out "
+                        />
+                    </div>
                 </div>
             </div>
         </div>

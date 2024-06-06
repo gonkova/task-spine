@@ -35,41 +35,43 @@ const FAQ = () => {
     ];
 
     return (
-        <div className='container w-[90%] md:w-9/12  mx-auto pb-24'>
-            <div className='flex flex-col justify-between md:items-center  mt-16 md:mt-24 relative'>
-                <div>
-                    <h1 className="text-4xl md:text-[64px] text-left font-sf-pro mb-[9%] font-bold leading-110">
-                        Got Questions?
-                        <br className="block md:hidden" />
-                        We&apos;ve Got
-                        <br />
-                        Answers!
-                    </h1>
-                    <div className='flex md:-mt-12'>
-                        <Image
-                            src='images/billiard.svg'
-                            alt=''
-                            width={20}
-                            height={20} />
-                        <span className='ml-2 text-l  font-bold font-sf-pro text-dark-1'>
-                            Check out the services
-                        </span>
+        <div className=" min-h-screen flex flex-col items-center justify-center">
+            <div className="py-2 mx-auto px-6 md:px-52 w-full max-w-7xl -mt-60 md:mt-10">
+                <div className=' mx-auto flex flex-col  md:justufy-center md:items-center mt-16  relative'>
+                    <div>
+                        <h1 className="text-4xl md:text-7xl text-left font-sf-pro mb-[9%] font-bold leading-110">
+                            Got Questions?
+                            <br className="block md:hidden" />
+                            We&apos;ve Got
+                            <br />
+                            Answers!
+                        </h1>
+                        <div className='flex -mt-4 md:-mt-12'>
+                            <Image
+                                src='images/billiard.svg'
+                                alt=''
+                                width={15}
+                                height={15} />
+                            <span className='ml-2 text-l  font-bold font-sf-pro text-dark-1'>
+                                Check out the services
+                            </span>
+                        </div>
                     </div>
+                    <img src='images/vector.svg' alt='' className=' w-28 md:w-[215px] h-auto ml-[153px] md:-ml-[323px] absolute z-20 top-8 md:-mt-1.5 md:top-2/3 pb-2.5 md:transform -translate-y-1/2 -translate-x-1/2' />
                 </div>
-                <img src='images/vector.svg' alt='' className=' w-28 md:w-48 h-auto ml-[153px] md:-ml-[298px] absolute z-20 top-8 md:top-2/3 pb-2.5 md:transform -translate-y-1/2 -translate-x-1/2' />
-            </div>
-            <div className=" md:px-8 flex flex-col  justify-center items-center mt-6 md:mt-12 md:mx-20 rounded-xl h-auto ">
-                {data.map((item) => (
-                    <AccordionUI
-                        key={item.id}
-                        Id={item.id}
-                        title={item.question}
-                        Index={index}
-                        setIndex={setIndex}
-                    >
-                        {item.answer}
-                    </AccordionUI>
-                ))}
+                <div className="flex flex-col  justify-center items-center mt-6 md:mt-12 rounded-xl h-auto ">
+                    {data.map((item) => (
+                        <AccordionUI
+                            key={item.id}
+                            Id={item.id}
+                            title={item.question}
+                            Index={index}
+                            setIndex={setIndex}
+                        >
+                            {item.answer}
+                        </AccordionUI>
+                    ))}
+                </div>
             </div>
         </div>
     );

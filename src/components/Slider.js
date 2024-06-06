@@ -26,8 +26,8 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <>
-      <main className="flex justify-center items-center md:mx-20 h-[100vh] md:h-[400px] mt-8 md:mt-0   overflow-hidden max-w-full">
+    <div className="md:pt-20 md:pb-14 mx-auto px-4 md:px-0">
+      <div className="flex justify-center items-center md:px-20 h-[100vh] md:h-[400px] mt-4 md:-mt-10 overflow-hidden px-2 w-full">
         <AnimatePresence initial={false}>
           {images.map((pic, idx) => (
             idx === activeImage && (
@@ -39,8 +39,8 @@ const Slider = () => {
                 exit={{ x: -300, opacity: 0, scale: 0.5 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               >
-                <div className="md:w-1/2 w-full">
-                  <div className="relative w-80 md:w-full mx-auto md:mx-0 h-[400px] md:h-[400px]">
+                <div className="w-full md:w-1/3">
+                  <div className="relative w-full mx-auto  h-[350px] md:h-[400px]">
                     <Image
                       src={pic.src}
                       alt=""
@@ -50,7 +50,7 @@ const Slider = () => {
                     />
                   </div>
                 </div>
-                <div className="w-full">
+                <div className="w-full md:w-2/3 ">
                   <Description
                     activeImage={activeImage}
                     clickNext={clickNext}
@@ -61,8 +61,9 @@ const Slider = () => {
             )
           ))}
         </AnimatePresence>
-      </main>
-      <div className="flex justify-between md:w-full mx-auto md:mx-0 md:px-20 pb-6 md:pb-0 md:mt-4 md:pt-10 ">
+      </div>
+      <div className='py-2 mx-auto md:px-20 '>
+      <div className="flex justify-between md:w-full mx-auto  pb-14 md:pb-4 md:mt-4 md:pt-10 ">
         <div className="flex space-x-2 mt-2 mx-6 md:mx-0">
           <Image
             src='images/rectangle.svg'
@@ -80,7 +81,7 @@ const Slider = () => {
           ))}
         </div>
         <hr className="border-default w-1/6  md:w-9/12 mx-4 mt-3" />
-        <div className="flex space-x-6 md:space-x-4 mx-6 md:mx-0">
+        <div className=" flex space-x-6 md:space-x-4 mx-6 md:mx-0">
           <button
             className="p-2 cursor-pointer rounded-full border-2 border-default bg-gray-100 hover:bg-dark-1 hover:border-transparent transition-all"
             onClick={clickPrev}
@@ -88,8 +89,8 @@ const Slider = () => {
             <Image
               src='images/left.svg'
               alt=''
-              width={25}
-              height={25}
+              width={20}
+              height={20}
             />
           </button>
           <button
@@ -99,14 +100,15 @@ const Slider = () => {
             <Image
               src='images/left.svg'
               alt=''
-              width={25}
-              height={25}
+              width={20}
+              height={20}
               className='rotate-180'
             />
           </button>
         </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

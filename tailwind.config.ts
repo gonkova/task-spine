@@ -1,4 +1,4 @@
-// tailwind.config.js
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -12,6 +12,23 @@ const config: Config = {
       fontFamily: {
         sans: ['SF Pro', 'Poppins', 'sans-serif'],
       },
+
+      screens: {
+        xs: '450px',
+      },
+
+      container: {
+        padding: {
+          DEFAULT: '1rem',
+          xl: '0rem',
+        },
+        center: true,
+        screens: {
+          sm: '1140px',
+        },
+      },
+    
+      
       lineHeight: {
         '110': '1.1',
         '120': '1.2',
