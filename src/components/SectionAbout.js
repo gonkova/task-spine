@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
-const About = () => {
+const SectionAbout = () => {
 
     const SALES_ITEMS = [
         { title: 'Our Team:', description: 'Introduce the core members of your team, their expertise, and their commitment to your clients\' success.' },
@@ -38,7 +38,7 @@ const About = () => {
                                 </li>
                             ))}
                         </ul>
-                        <Button className='bg-primary border-none rounded-lg text-base leading-120 font-poppins mt-10 py-3 hover:bg-transparent hover:border-dark-1 hover:border-2 hover:border-solid ' >
+                        <Button className='bg-primary border-none rounded-lg text-base leading-120 font-poppins mt-10 py-3 hover:bg-dark-1 hover:text-white ' >
                             About Us
                         </Button>
                     </div>
@@ -55,4 +55,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default SectionAbout;

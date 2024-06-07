@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import AccordionUI from '@/components/AccordionUI';
 import Image from 'next/image';
 
-const FAQ = () => {
+const SectionFAQ = () => {
     const [index, setIndex] = useState(null);
 
     const data = [
@@ -77,4 +77,4 @@ const FAQ = () => {
     );
 }
 
-export default FAQ;
+export default SectionFAQ;

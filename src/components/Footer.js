@@ -3,9 +3,6 @@ import React from 'react';
 import { FaTwitter } from "react-icons/fa";
 import FormNewslatter from './FormNewslatter';
 
-
-
-
 const Footer = () => {
     const sections = [
         {
@@ -37,7 +34,7 @@ const Footer = () => {
                 <div className='p-5 md:mt-10 text-center md:text-left '>
                     <ul>
                         <div className='pb-10 ml-14 md:ml-0'>
-                            <img src="images/Logo.svg" alt="" className="bg-bgcustom rounded-md w-46 h-auto"/>
+                            <img src="images/logo.svg" alt="" className="bg-bgcustom rounded-md w-46 h-auto"/>
                         </div>
                         <p className='text-white text-sm -mt-4 md:-mt-0 font-semibold w-full md:w-64 pb-6'>
                             Spine is the ultimate boost for your online presence. We&apos;re here to supercharge your digital agency&apos;s journey.

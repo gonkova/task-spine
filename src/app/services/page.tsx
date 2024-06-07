@@ -1,8 +1,10 @@
-export default function Services() {
+import SectionServices from "@/components/SectionServices";
 
-  return (
-    <main >
-      <h1>Services</h1>
-    </main>
-  );
-}
+export default function Services() {
+  
+    return (
+      <main >
+       <SectionServices/>
+      </main>
+    );
+  }

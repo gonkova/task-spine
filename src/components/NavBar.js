@@ -2,12 +2,14 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Button from '../components/Button';
+import { RiMenu3Fill } from "react-icons/ri";
+import { RiCloseLargeFill } from "react-icons/ri";
 
 const Navbar = () => {
     const MENU_ITEMS = [
         { link: '/', title: 'Home' },
         { link: '/about', title: 'About' },
-        { link: '/serv', title: 'Services' },
+        { link: '/services', title: 'Services' },
         { link: '/faq', title: 'FAQ' },
         { link: '/contact', title: 'Contact' },
     ];
@@ -49,14 +51,13 @@ const Navbar = () => {
                         </Button>
                     </div>
                     <div className='md:hidden flex items-center'>
-                        <button className='inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white' onClick={toggleNavbar}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" className="w-10 h-10">
+                        <button className='inline-flex items-center justify-center p-2  text-dark-1' onClick={toggleNavbar}>
                                 {isClick ? (
-                                    <path fillRule="evenodd" d="M6 8.707l5.146-5.147a1 1 0 011.415 1.414L7.414 10l5.147 5.146a1 1 0 11-1.415 1.415L6 11.414l-5.146 5.147a1 1 0 11-1.415-1.415L4.586 10 1.44 6.854a1 1 0 111.415-1.414L6 8.707z" clipRule="evenodd" />
+                                    <RiCloseLargeFill className='text-3xl'/>
                                 ) : (
-                                    <path fillRule="evenodd" d="M3 9a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM4 5a1 1 0 100 2h12a1 1 0 100-2H4zm12 6a1 1 0 110 2H7a1 1 0 110-2h9z" clipRule="evenodd" />
+                                    <RiMenu3Fill className='text-4xl'/>
                                 )}
-                            </svg>
+                            
                         </button>
                     </div>
                 </div>
