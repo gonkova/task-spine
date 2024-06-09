@@ -35,8 +35,8 @@ const ServicesFAQ = () => {
     ];
 
     return (
-        <div className=" min-h-screen flex flex-col items-center justify-center">
-            <div className="py-2 mx-auto px-6 md:px-52 w-full max-w-7xl -mt-[130%] md:mt-10 -mb-80 md:mb-40">
+        <div className=" md:min-h-screen flex flex-col items-center justify-center">
+            <div className="py-2 mx-auto px-6 md:px-52 w-full max-w-7xl  md:mt-10 mb-12 md:mb-40">
                 <div className=' mx-auto flex flex-col  md:justufy-center md:items-center mt-16  relative'>
                     <div>
                         <h1 className="text-4xl md:text-7xl text-left font-sf-pro mb-[9%] font-bold leading-110">
