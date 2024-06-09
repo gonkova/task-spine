@@ -58,7 +58,7 @@ const Hero = () => {
           </div>
         </div>
         <img
-          src="images/line.svg"
+          src="images/Line.svg"
           alt=""
           className="w-full mx-auto pt-10 md:pt-16 md:px-5"
         />
@@ -94,7 +94,7 @@ const Hero = () => {
             <Carousel />
           </div>
         </div>
-        <img src="images/line.svg" alt="" className="w-full md:px-5" />
+        <img src="images/Line.svg" alt="" className="w-full md:px-5" />
       </div>
     </div>
   );

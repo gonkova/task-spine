@@ -32,7 +32,6 @@ const Slider = () => {
   const activeImageData = useMemo(() => images[activeImage], [activeImage]);
 
   useEffect(() => {
-    // Ресетирай състоянието при повторно зареждане на страницата
     setActiveImage(0);
     setDirection(1);
   }, []);

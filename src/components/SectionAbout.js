@@ -10,7 +10,6 @@ const SectionAbout = () => {
         { title: 'Client-Centric Approach:', description: 'Emphasize your dedication to delivering outstanding service and results for your clients.' },
     ];
 
-
     return (
         <div className="h-auto flex flex-col items-center justify-center pt-12 md:pt-16 ">
             <div className="py-2 mx-auto md:px-10 w-full max-w-7xl">
